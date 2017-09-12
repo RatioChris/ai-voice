@@ -1,0 +1,8 @@
+.drawer {
+  width: 310px !important;
+}
+
+.drawer--button {
+  width: 310px !important;
+  text-align: right;
+}

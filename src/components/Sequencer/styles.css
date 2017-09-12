@@ -1,0 +1,9 @@
+.sequencer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+#canvas {
+  margin: auto;
+}
