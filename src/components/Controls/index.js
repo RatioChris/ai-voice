@@ -14,6 +14,7 @@ class Controls extends Component {
     super(props)
 
     this.names = [
+      'chorus',
       'cor_anglais',
       'violin',
       'chris',
@@ -21,7 +22,12 @@ class Controls extends Component {
     ]
     this.moods = [
       'happy',
-      'sad'
+      'happy2',
+      'happy3',
+      'sad',
+      'sad2',
+      'sad3',
+      'angry'
     ]
 
     this.onSetMood = this.onSetMood.bind(this)

@@ -4,8 +4,8 @@ import {
 } from '../actions'
 
 const audio = (state = {
-  name: 'violin',
-  mood: 'sad'
+  name: 'chorus',
+  mood: 'sad2'
 }, action) => {
   switch (action.type) {
     case SET_NAME:
