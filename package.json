@@ -9,14 +9,14 @@
     "lint": "standard"
   },
   "dependencies": {
-    "material-ui": "1.0.0-beta.2",
+    "material-ui": "next",
     "material-ui-icons": "^1.0.0-beta.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.13",
     "redux": "^3.7.2",
-    "typeface-baloo": "^0.0.35"
+    "typeface-quicksand": "^0.0.35"
   },
   "devDependencies": {
     "standard": "^10.0.3"

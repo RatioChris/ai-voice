@@ -1,22 +1,30 @@
 /*
  * actions
  */
-export const DRAWER = 'DRAWER'
-export const INSTRUMENT = 'INSTRUMENT'
+export const SET_DRAWER = 'DRAWER'
+export const SET_NAME = 'SET_NAME'
+export const SET_MOOD = 'SET_MOOD'
 
 /*
  * action creators
  */
 export const setDrawer = (bool) => {
   return {
-    type: DRAWER,
+    type: SET_DRAWER,
     bool
   }
 }
 
-export const setInstrument = (val) => {
+export const setName = (val) => {
   return {
-    type: INSTRUMENT,
+    type: SET_NAME,
+    val
+  }
+}
+
+export const setMood = (val) => {
+  return {
+    type: SET_MOOD,
     val
   }
 }
@@ -30,8 +38,14 @@ export const onSetDrawer = (bool) => {
   }
 }
 
-export const onSetInstrument = (val) => {
+export const onSetName = (val) => {
   return (dispatch, getState, container) => {
-    return dispatch(setInstrument(val))
+    return dispatch(setName(val))
+  }
+}
+
+export const onSetMood = (val) => {
+  return (dispatch, getState, container) => {
+    return dispatch(setMood(val))
   }
 }

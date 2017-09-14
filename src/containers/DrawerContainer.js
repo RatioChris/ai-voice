@@ -1,13 +1,12 @@
 import { connect } from 'react-redux'
 import {
-  setDrawer,
-  setSessionKey
+  setDrawer
 } from '../actions'
 import Drawer from '../components/Drawer'
 
 const mapStateToProps = (state) => {
   return {
-    session: state.session,
+    audio: state.audio,
     ui: state.ui
   }
 }
@@ -16,9 +15,6 @@ const mapDispatchToProps = (dispatch) => {
   return {
     onToggleDrawer: (bool) => {
       dispatch(setDrawer(bool))
-    },
-    onSetSessionKey: (val) => {
-      dispatch(setSessionKey(val))
     }
   }
 }

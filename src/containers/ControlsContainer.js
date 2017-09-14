@@ -3,7 +3,7 @@ import {
   setName,
   setMood
 } from '../actions'
-import Sequencer from '../components/Sequencer'
+import Controls from '../components/Controls'
 
 const mapStateToProps = (state) => {
   return {
@@ -13,18 +13,18 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onSetName: (val) => {
-      dispatch(setName(val))
-    },
     onSetMood: (val) => {
       dispatch(setMood(val))
+    },
+    onSetName: (val) => {
+      dispatch(setName(val))
     }
   }
 }
 
-const SequencerContainer = connect(
+const ControlsContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Sequencer)
+)(Controls)
 
-export default SequencerContainer
+export default ControlsContainer

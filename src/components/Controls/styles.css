@@ -1,0 +1,21 @@
+.controls {
+  position: fixed !important;
+  bottom: 0;
+}
+
+.controls--toolbar {
+  justify-content: center;
+}
+
+.controls .controls--group {
+  flex-grow: 0;
+  margin: 0 20px;
+}
+
+.controls div[class*=MuiInput-inkbar]:after {
+  background-color: #E91E63;
+}
+
+.controls label[class*=MuiFormLabel-focused] {
+  color: #E91E63
+}
