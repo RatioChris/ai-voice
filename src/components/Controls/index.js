@@ -1,5 +1,3 @@
-/* global localStorage */
-
 import React, { Component } from 'react'
 import AppBar from 'material-ui/AppBar'
 import { FormControl } from 'material-ui/Form'
@@ -7,33 +5,18 @@ import Input, { InputLabel } from 'material-ui/Input'
 import { MenuItem } from 'material-ui/Menu'
 import Select from 'material-ui/Select'
 import Toolbar from 'material-ui/Toolbar'
+import { names } from '../../utils/config'
 import './styles.css'
 
 class Controls extends Component {
   constructor (props) {
     super(props)
 
-    this.names = [
-      'cor_anglais',
-      'violin',
-      'chris',
-      'seth'
-    ]
-    this.moods = [
-      'happy',
-      'sad'
-    ]
-
-    this.onSetMood = this.onSetMood.bind(this)
     this.onSetName = this.onSetName.bind(this)
   }
 
-  onSetMood (val) {
-    this.props.onSetMood(val)
-  }
-
   onSetName (val) {
-    this.props.onSetName(val)
+    this.props.onSetName(JSON.parse(val))
   }
 
   render () {
@@ -45,31 +28,14 @@ class Controls extends Component {
           <FormControl className='controls--group'>
             <InputLabel htmlFor='name'>Name</InputLabel>
             <Select
-              value={audio.name}
+              value={JSON.stringify(audio.name)}
               onChange={e => this.onSetName(e.target.value)}
               input={<Input id='name' />}
             >
-              {this.names.map((item, index) => {
+              {names.map((name, index) => {
                 return (
-                  <MenuItem key={`menu-name--${index}`} value={item}>
-                    {item}
-                  </MenuItem>
-                )
-              }, this)}
-            </Select>
-          </FormControl>
-
-          <FormControl className='controls--group'>
-            <InputLabel htmlFor='mood'>Mood</InputLabel>
-            <Select
-              value={audio.mood}
-              onChange={e => this.onSetMood(e.target.value)}
-              input={<Input id='mood' />}
-            >
-              {this.moods.map((item, index) => {
-                return (
-                  <MenuItem key={`menu-mood--${index}`} value={item}>
-                    {item}
+                  <MenuItem key={`menu-name--${index}`} value={JSON.stringify(name)}>
+                    {name.display}
                   </MenuItem>
                 )
               }, this)}

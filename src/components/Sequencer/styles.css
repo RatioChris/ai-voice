@@ -4,6 +4,7 @@
   height: 100vh;
 }
 
-#canvas {
+#name {
   margin: auto;
+  font-size: 10vw;
 }
