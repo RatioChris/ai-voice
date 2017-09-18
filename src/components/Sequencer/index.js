@@ -9,25 +9,42 @@ class Sequencer extends Component {
     this.name = props.audio.name
   }
 
+  componentDidMount () {
+    this.speak(this.name)
+  }
+
   componentWillReceiveProps (nextProps) {
     if (this.props.audio.name !== nextProps.audio.name) {
+      this.addClass()
+
       this.name = nextProps.audio.name
       this.speak(this.name)
     }
-  }
-
-  componentDidMount () {
-    this.speak(this.name)
   }
 
   speak (name) {
     const synth = window.speechSynthesis
     const msg = new SpeechSynthesisUtterance(name.phonetic)
     msg.rate = 0.01
-    msg.voice = synth.getVoices().filter((voice) => {
+    msg.voice = synth.getVoices().filter(voice => {
       return voice.name === 'Whisper'
     })[0]
+    msg.onend = (event) => {
+      console.log('Speech has finished after ' + event.elapsedTime + ' milliseconds.')
+      this.removeClass()
+    }
+
     synth.speak(msg)
+  }
+
+  addClass () {
+    const elem = document.getElementById('name')
+    elem.classList.add('display')
+  }
+
+  removeClass () {
+    const elem = document.getElementById('name')
+    elem.classList.remove('display')
   }
 
   render () {

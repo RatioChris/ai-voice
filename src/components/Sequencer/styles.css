@@ -7,4 +7,11 @@
 #name {
   margin: auto;
   font-size: 10vw;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+#name.display {
+  opacity: 0.9;
+  transition: opacity 0.3s;
 }
