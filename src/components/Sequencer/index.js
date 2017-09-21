@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
+import Audio from '../../utils/Audio'
 import { pink, grey } from 'material-ui/colors'
 import './styles.css'
-// import { audioContext, impulseResponse, LOOPS, OCTAVE, SAMPLE_LIBRARY } from '../../utils/Audio'
-import Audio from '../../utils/Audio'
 
 const AUDIO = new Audio()
 let audioContext

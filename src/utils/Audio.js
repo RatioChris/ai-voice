@@ -1,29 +1,7 @@
+import { MOODS_MODES, OCTAVE } from './config'
 import ImpulseResponse1 from '../samples/impulses/AirportTerminal.mp3'
 import ImpulseResponse2 from '../samples/impulses/NaturalHall.mp3'
 import ImpulseResponse3 from '../samples/impulses/PrimeShort.mp3'
-
-/*
- * vars
- */
-const MODES = {
-  ionian: ['C', 'D', 'E', 'F', 'G', 'A', 'B'],
-  dorian: ['C', 'D', 'Eb', 'F', 'G', 'A', 'Bb'],
-  phrygian: ['C', 'Db', 'Eb', 'F', 'G', 'Ab', 'Bb'],
-  lydian: ['C', 'D', 'E', 'F#', 'G', 'A', 'B'],
-  mixolydian: ['C', 'D', 'E', 'F', 'G', 'A', 'Bb'],
-  aeolian: ['C', 'D', 'Eb', 'F', 'G', 'Ab', 'Bb'],
-  locrian: ['C', 'Db', 'Eb', 'F', 'Gb', 'Ab', 'Bb']
-}
-const MOODS = {
-  happy: MODES.ionian,
-  sad2: MODES.dorian,
-  sad3: MODES.phrygian,
-  happy2: MODES.lydian,
-  happy3: MODES.mixolydian,
-  sad: MODES.aeolian,
-  angry: MODES.locrian
-}
-const OCTAVE = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
 
 /*
  * public
@@ -83,7 +61,7 @@ const _setImpulseResponse = (mood) => {
 }
 
 const _setLoops = (mood) => {
-  const scale = MOODS[mood]
+  const scale = MOODS_MODES[mood]
   const octave = 5
   let arr = []
 
@@ -91,7 +69,7 @@ const _setLoops = (mood) => {
     arr.push({
       instrument: 'Voices',
       note: `${note}${octave}`,
-      duration: _getRandom(17, 22),
+      duration: _getRandom(16, 22),
       delay: _getRandom(3, 14)
     })
   }
@@ -100,7 +78,7 @@ const _setLoops = (mood) => {
 }
 
 const _updateLoops = (loops, mood) => {
-  const scale = MOODS[mood]
+  const scale = MOODS_MODES[mood]
   const octave = 5
   let arr = []
   let i = 0
